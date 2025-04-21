@@ -188,7 +188,6 @@ nav {
 }
 
 .about-img {
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #0f2027);
   flex: 1;
   display: flex;
   justify-content: center;
@@ -197,10 +196,9 @@ nav {
 
 .about-img img {
   max-width: 100%;
-  width: 500px;
+  width: 550px;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(242, 200, 149, 0.3);
   transition: transform 0.2s ease;
 }
 
@@ -304,8 +302,8 @@ nav {
 /* Hover Effect for Education Cards */
 .edu-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3);
-  border-left-color: #ff6600;
+  box-shadow: 0 10px 30px rgba(0, 153, 255, 0.646);
+  border-left-color: #0099ff;
 }
 
 .edu-card:nth-child(2) {
@@ -1043,4 +1041,197 @@ nav {
   .certificate-card p {
     font-size: 0.95rem;
   }
+}
+/* Blue neon light animation CSS */
+.about-img {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.about-img img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
+  z-index: 1;
+  position: relative;
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: 0 0 10px #0099ff, 0 0 20px #0099ff, 0 0 30px #0099ff;
+  z-index: 0;
+  animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #0099ff, 0 0 20px #0099ff;
+    opacity: 0.7;
+  }
+  50% {
+    box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff, 0 0 40px #00ccff;
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #0099ff, 0 0 20px #0099ff;
+    opacity: 0.7;
+  }
+}
+.certificate-card {
+  position: relative;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(4, 174, 253, 0.685);
+  background: #fff;
+}
+
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.certificate-card p {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Neon animation container */
+.certificate-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid transparent;
+  z-index: -1;
+  border-radius: 4px;
+  animation: neonGlow 2s linear infinite;
+}
+
+/* Blue neon glow animation */
+@keyframes neonGlow {
+  0% {
+     border-color: rgba(0, 128, 255, 1); 
+     box-shadow: 0 0 5px rgba(0, 128, 255, 1), 0 0 10px rgba(0, 128, 255, 1), 0 0 15px rgba(0, 128, 255, 1); 
+   } 
+   20% {
+    border-color: rgba(0, 128, 255, 1);
+    box-shadow: 0 0 5px rgba(0, 128, 255, 0.5), 0 0 10px rgba(0, 128, 255, 0.3), 0 0 15px rgba(0, 128, 255, 0.2);
+  }
+  40% {
+    border-color: rgba(0, 128, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 128, 255, 0.3), 0 0 10px rgba(0, 128, 255, 0.2), 0 0 15px rgba(105, 175, 245, 0.1);
+  }
+  60% {
+    border-color: rgba(0, 128, 255, 1);
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.5), 0 0 20px rgba(0, 128, 255, 0.3), 0 0 25px rgba(0, 128, 255, 0.2);
+  }
+  80% { 
+    border-color: rgba(0, 128, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.3), 0 0 20px rgba(0, 128, 255, 0.2), 0 0 25px rgba(0, 128, 255, 0.1);
+  } 
+  100% {
+    border-color: rgba(0, 128, 255, 0);
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0), 0 0 20px rgba(0, 128, 255, 0), 0 0 25px rgba(0, 128, 255, 0);
+  }
+}
+/* Red Neon Light Animation CSS */
+
+/* Base styling for project cards with relative positioning to contain the neon effect */
+.project-card {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Creating the neon outline container */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 10px;
+  background: transparent;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 
+              0 0 20px rgba(255, 0, 0, 0.5), 
+              0 0 30px rgba(255, 0, 0, 0.3);
+  border: 2px solid #ff0000;
+  animation: neonPulse 1.5s infinite alternate, 
+             neonTravel 4s infinite linear;
+}
+
+/* Pulsing glow effect */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5),
+                0 0 10px rgba(255, 0, 0, 0.3),
+                0 0 15px rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+                0 0 20px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 0, 0, 0.3);
+    border-color: rgba(255, 0, 0, 1);
+  }
+}
+
+/* Light movement around the rectangle */
+@keyframes neonTravel {
+  0% {
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 0, 0, 0.4) 25%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+  }
+  25% {
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 0, 0, 0.4) 25%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: 0 100%;
+  }
+  50% {
+    background: linear-gradient(270deg, transparent 0%, rgba(255, 0, 0, 0.4) 25%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 0 0;
+  }
+  75% {
+    background: linear-gradient(0deg, transparent 0%, rgba(255, 0, 0, 0.4) 25%, transparent 50%);
+    background-size: 100% 200%;
+    background-position: 0 0;
+  }
+  100% {
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 0, 0, 0.4) 25%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+  }
+}
+
+/* Enhanced visibility for content inside the card */
+.project-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: Add hover effect to intensify the glow */
+.project-card:hover::before {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.9), 
+              0 0 30px rgba(255, 0, 0, 0.7), 
+              0 0 45px rgba(255, 0, 0, 0.5);
 }
